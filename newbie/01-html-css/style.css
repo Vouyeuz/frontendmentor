@@ -2,51 +2,135 @@
 @import url("https://fonts.google.com/specimen/Lexend+Deca");
 
 :root {
-    /* primary color */
-    --main-bg-color: hsl(233, 47%, 7%);
-    --card-bg-color: hsl(244, 38%, 16%);
-    --accent-color: hsl(277, 64%, 61%);
-    /* neutral color */
-    --main-heading: hsl(0, 0%, 100%);
-    --main-stat: hsl(0, 0%, 100%);
-    --main-paragraph: hsla(0, 0%, 100%, .75);
-    --stat-headings: hsla(0, 0%, 100%, .6);
-    /* font */
-    --body-font-size: 15px;
-    --specimen-inter: 'Specimen', inter;
-    --specimen-lexenddexa: 'Specimen', lexenddexa;
+  /* primary color */
+  --main-bg-color: hsl(233, 47%, 7%);
+  --card-bg-color: hsl(244, 38%, 16%);
+  --accent-color: hsl(277, 64%, 61%);
+  --accent-color-img: hsla(277, 100%, 35%, 0.5);
+  /* neutral color */
+  --main-heading: hsl(0, 0%, 100%);
+  --main-stat: hsl(0, 0%, 100%);
+  --main-paragraph: hsla(0, 0%, 100%, 0.75);
+  --stat-headings: hsla(0, 0%, 100%, 0.6);
+  /* font */
+  --body-font-size: 15px;
+  --specimen-inter: "Inter", sans-serif;
+  --specimen-lexenddexa: "Lexend Deca", sans-serif;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background: var(--main-bg-color);
-    display: flex;
+  margin: 0;
+  padding: 0;
+  background: var(--main-bg-color);
+  font-size: var(--body-font-size);
 }
 
-
-.card {
+@media (max-width: 1440px) {
+  .card {
     min-height: 300px;
     max-width: 80%;
     background: var(--card-bg-color);
     display: flex;
-    justify-content: space-evenly;
-    /* margin: 100px auto; */
-    /* font-size: clamp(1rem, 2.5vw, 1rem); */
-}
-
-.left {
-    width: 50%;
-    padding: 2.5rem;
-}
-
-.right {
-    width: 50%;
-    background-size: cover;
+    margin: 7rem auto;
     position: relative;
-}
+    border-radius: 1%;
+  }
 
-.attribution {
+  .card::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background: hsla(277, 10%, 1%, 0.3);
+  }
+
+  .text {
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  .text__container {
+    padding: 3rem;
+    padding-right: 6rem;
+  }
+
+  .header {
+    font-family: var(--specimen-inter);
+    color: var(--main-heading);
+    font-weight: 700;
+  }
+
+  .accent {
+    color: var(--accent-color);
+  }
+
+  .paragraph {
+    color: var(--main-paragraph);
+    font-family: var(--specimen-lexenddexa);
+    /* font-family: var(--specimen-inter); */
+    font-weight: 400;
+    font-size: 0.82rem;
+    padding-right: 3.5rem;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  .stat {
+    color: var(--main-stat);
+    font-family: var(--specimen-lexenddexa);
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    padding-right: 5.2rem;
+  }
+
+  .stat__left,
+  .stat__right,
+  .stat__mid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat__heading {
+    font-weight: 700;
+    font-family: var(--specimen-lexenddexa);
+    margin-bottom: 0.3rem;
+  }
+
+  .stat__body {
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    color: var(--stat-headings);
+    font-family: var(--specimen-lexenddexa);
+    font-weight: 400;
+  }
+
+  .image {
+    width: 50%;
+    margin: 0;
+  }
+
+  .image::before {
+    content: "";
+    position: absolute;
+    background: var(--accent-color-img);
+    height: 100%;
+    width: 50%;
+    z-index: 100;
+    border-radius: 1%;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    border-radius: 1%;
+  }
+
+  .attribution {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -56,9 +140,132 @@ body {
     width: 331px;
     padding-bottom: 10px;
     color: var(--main-stat);
-    
+  }
+
+  .attribution a {
+    text-decoration: none;
+  }
 }
 
-.attribution a {
+@media (max-width: 375px) {
+  .card {
+    height: 100%;
+    width: 61%;
+    background: var(--card-bg-color);
+    border-radius: 2%;
+    display: flex;
+    flex-direction: column-reverse;
+    top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 100%;
+    background: hsla(277, 10%, 1%, 0.3);
+  }
+
+  .text {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+
+  .text__container {
+    padding: 1.1rem;
+  }
+
+  .header {
+    font-family: var(--specimen-inter);
+    color: var(--main-heading);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: -1rem;
+  }
+
+  .accent {
+    color: var(--accent-color);
+  }
+
+  .paragraph {
+    color: var(--main-paragraph);
+    font-family: var(--specimen-lexenddexa);
+    font-weight: 400;
+    font-size: 0.7rem;
+    padding: 0 0.5rem 2rem 0.5rem;
+    margin-bottom: -.7rem;
+    line-height: 1.3rem;
+  }
+
+  .stat {
+    color: var(--main-stat);
+    font-family: var(--specimen-lexenddexa);
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    font-size: 1.1rem;
+  }
+
+  .stat__left,
+  .stat__right,
+  .stat__mid {
+    margin: 0.5rem;
+  }
+
+  .stat__heading {
+    font-weight: 700;
+    font-family: var(--specimen-lexenddexa);
+    margin-bottom: 0.3rem;
+  }
+
+  .stat__body {
+    text-transform: uppercase;
+    font-size: 0.5rem;
+    color: var(--stat-headings);
+    font-family: var(--specimen-lexenddexa);
+    font-weight: 400;
+  }
+
+  .image {
+    width: 100%;
+    height: 10.5rem;
+    margin: 0;
+  }
+
+  .image::before {
+    content: "";
+    position: absolute;
+    background: var(--accent-color-img);
+    height: 10.5rem;
+    width: 100%;
+    z-index: 100;
+    border-radius: 2%;
+  }
+
+  img {
+    height: cover;
+    width: cover;
+    z-index: 1;
+    border-radius: 2%;
+  }
+
+  .attribution {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 310px;
+    padding-bottom: 5px;
+    color: var(--main-stat);
+    display: none;
+  }
+
+  .attribution a {
     text-decoration: none;
+  }
 }
