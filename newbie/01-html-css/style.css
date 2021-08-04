@@ -1,0 +1,64 @@
+@import url("https://fonts.google.com/specimen/Inter");
+@import url("https://fonts.google.com/specimen/Lexend+Deca");
+
+:root {
+    /* primary color */
+    --main-bg-color: hsl(233, 47%, 7%);
+    --card-bg-color: hsl(244, 38%, 16%);
+    --accent-color: hsl(277, 64%, 61%);
+    /* neutral color */
+    --main-heading: hsl(0, 0%, 100%);
+    --main-stat: hsl(0, 0%, 100%);
+    --main-paragraph: hsla(0, 0%, 100%, .75);
+    --stat-headings: hsla(0, 0%, 100%, .6);
+    /* font */
+    --body-font-size: 15px;
+    --specimen-inter: 'Specimen', inter;
+    --specimen-lexenddexa: 'Specimen', lexenddexa;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--main-bg-color);
+    display: flex;
+}
+
+
+.card {
+    min-height: 300px;
+    max-width: 80%;
+    background: var(--card-bg-color);
+    display: flex;
+    justify-content: space-evenly;
+    /* margin: 100px auto; */
+    /* font-size: clamp(1rem, 2.5vw, 1rem); */
+}
+
+.left {
+    width: 50%;
+    padding: 2.5rem;
+}
+
+.right {
+    width: 50%;
+    background-size: cover;
+    position: relative;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 331px;
+    padding-bottom: 10px;
+    color: var(--main-stat);
+    
+}
+
+.attribution a {
+    text-decoration: none;
+}
